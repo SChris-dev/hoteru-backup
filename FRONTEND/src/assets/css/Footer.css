@@ -1,0 +1,70 @@
+:root {
+    --main-color: #5f55ce;
+    --secondary-color: #433D8B;
+    --bg-color: #2E236C;
+    --bg-alt-color: #17153B;
+    --bg-footer: #0b0a1b;
+    --text-color: #C8ACD6;
+    --text-secondary: #917e9b;
+    --normal-text: white;
+}
+
+.footer {
+    background-color: var(--bg-footer);
+    color: var(--normal-text);
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+  
+  .footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .footer-section h3, .footer-section h4 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-section p, .footer-section ul, .footer-section a {
+    font-size: 0.9rem;
+    margin: 0.2rem 0;
+    color: var(--normal-text);
+    text-decoration: none;
+    transition: .3s ease;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-section ul li {
+    margin: 0.3rem 0;
+  }
+  
+  .footer-section ul li a:hover {
+    color: var(--main-color);
+    font-size: 0.95rem;
+  }
+  
+  .footer-bottom {
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+    color: #aaa;
+  }
+  
+  .social-icons a {
+    margin: 0 0.5rem;
+    font-size: 1.2rem;
+    color: var(--normal-text);
+    transition: 0.3s ease;
+  }
+  
+  .social-icons a:hover {
+    color: var(--main-color);
+  }
+  

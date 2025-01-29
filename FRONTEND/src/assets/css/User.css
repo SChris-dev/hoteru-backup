@@ -1,0 +1,313 @@
+:root {
+    --main-color: #5f55ce;
+    --secondary-color: #433D8B;
+    --bg-color: #2E236C;
+    --bg-alt-color: #17153B;
+    --text-color: #C8ACD6;
+    --text-secondary: #917e9b;
+    --normal-text: white;
+}
+
+
+/* dashboard */
+.error-message {
+    color: #ff0022;
+}
+
+.dashboard-user {
+    position: relative;
+    background: url('/user_bg.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.dashboard-user::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+.dashboard-content {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    color: white;
+    /* max-width: 500px; */
+    width: 90%;
+}
+
+.user-info {
+    margin: 20px auto;
+}
+
+.user-details-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.toggle-btn {
+    background: var(--main-color);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.toggle-btn:hover {
+    background: #4b43a4;
+}
+
+.user-details-wrapper {
+    overflow: hidden;
+    transition: height 0.4s ease-in-out;
+}
+
+.user-details {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    border-radius: 10px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    color: white;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    margin-top: 10px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dashboard-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.card-dash {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+    max-width: 250px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.card-dash:hover {
+    transform: translateY(-5px);
+}
+
+.card-dash h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.card-dash p {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.btn-dash {
+    display: inline-block;
+    background: var(--main-color);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-dash:hover {
+    background: #4b43a4;
+}
+
+/* ROOMS PAGE */
+
+.rooms-selection {
+    position: relative;
+    background: url('/user_bg.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.rooms-selection::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+
+.rooms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    justify-content: center;
+    margin-top: 20px;
+    z-index: 2;
+    padding: 100px;
+}
+
+.room-card {
+    background: var(--bg-alt-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    color: white;
+
+}
+
+.room-card:hover {
+    transform: scale(1.03);
+}
+
+.room-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.room-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.toggle-details {
+    background: var(--main-color);
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.toggle-details:hover {
+    background: #4b43a4;
+}
+
+.room-details-wrapper {
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+}
+
+.room-details {
+    background: var(--bg-color);
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 5px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* RESERVATIONS PAGE */
+.reservations {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: url('/user_bg.jpg') no-repeat center center/cover;
+    height: 100vh;
+    padding: 20px;
+}
+
+.reservations::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+.reservations-content {
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    color: white;
+}
+
+  @media (max-width: 768px) {
+
+    .user-details {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: start;
+        width: 100%;
+        padding: 20px;
+        font-size: 12px;
+    }
+    .dashboard-user {
+        position: relative;
+        background: url('/user_bg.jpg') no-repeat center center/cover;
+        height: 125vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 100px 20px;
+    }
+    .rooms-selection {
+        position: relative;
+        background: url('/user_bg.jpg') no-repeat center center/cover;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+    }
+    .rooms-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        justify-content: center;
+        margin-top: 20px;
+        z-index: 2;
+        padding: 50px;
+    }
+  }
+  

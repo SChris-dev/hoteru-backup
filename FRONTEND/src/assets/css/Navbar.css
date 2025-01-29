@@ -1,0 +1,186 @@
+:root {
+    --main-color: #5f55ce;
+    --secondary-color: #433D8B;
+    --bg-color: #2E236C;
+    --bg-alt-color: #17153B;
+    --text-color: #C8ACD6;
+    --text-secondary: #917e9b;
+  }
+  
+  /* Base styling */
+  .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      background-color: #17153b3c;
+      backdrop-filter: blur(20px);
+      color: var(--text-color);
+      z-index: 9;
+    }
+    
+    .navbar-logo img {
+      margin: 0;
+      width: 250px;
+      padding: 0 0 0 10vh;
+    }
+    
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 1rem;
+    }
+    
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.2rem;
+      transition: .3s ease;
+    }
+  
+    .nav-links li a:hover {
+      color: var(--text-color);
+      font-size: 1.25rem;
+    }
+  
+    .nav-links, .nav-profile {
+      display: flex;
+      align-items: center;
+  }
+  
+  .nav-links li, .nav-profile a {
+      list-style: none;
+      margin: 0 10px;
+      font-size: 1.2rem;
+  }
+  
+  .nav-links a, .nav-profile a, .profile-dropdown button {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: .3s ease;
+  }
+  
+  .nav-links a:hover, .nav-profile a:hover, .profile-dropdown button:hover {
+      color: var(--text-color);
+      font-size: 1.25rem;
+  }
+  
+  .nav-profile2 {
+    display: none;
+  }
+  /* Profile dropdown styling */
+  .profile-dropdown {
+      position: relative;
+  }
+  
+  .profile-dropdown button {
+      background: none;
+      border: none;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 1.2rem;
+  }
+  
+  .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background-color: var(--bg-alt-color);
+      padding: 10px;
+      border-radius: 4px;
+  }
+  
+  .profile-dropdown:hover .dropdown-content {
+      display: block;
+  }
+  
+  .dropdown-content a {
+      display: block;
+      color: white;
+      padding: 5px 10px;
+      text-decoration: none;
+  }
+  
+  .dropdown-content a:hover {
+      color: var(--text-color);
+  }
+    
+    .menu-icon {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+  
+    
+    /* Responsive styling */
+    @media (max-width: 900px) {
+      .menu-icon {
+        display: block; /* Show menu icon on smaller screens */
+      }
+  
+      .navbar-logo img {
+        margin: 0;
+        padding: 0 0 0 5vh;
+        width: 200px;
+      }
+    
+      .nav-links {
+        position: absolute;
+        top: 85px;
+        right: 0;
+        background-color: #17153bfb;
+        backdrop-filter: blur(5px);
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+        max-width: 0;
+        overflow: hidden;
+        transition: .3s ease all;
+        margin-right: 0;
+        gap: 2rem;
+      }
+    
+      .nav-links.active {
+        max-width: 50%; /* Ubah sesuai banyaknya link e */
+      }
+    
+      .nav-links li {
+        margin: 1.2rem 0;
+  
+      }
+  
+      .nav-profile {
+        display: none;
+      } 
+  
+      .nav-profile2 {
+        display: block;
+      }
+  
+      .nav-links li {
+        font-size: 3.2rem;
+      }
+    
+      .nav-profile2 a {
+        list-style: none;
+        margin: 0 10px;
+        font-size: 1.2rem;
+        color: white;
+        font-weight: bold;
+        transition: .3s ease;
+      }
+  
+      .nav-links li, .nav-profile2 a:hover {
+        font-size: 1.3rem;
+        color: var(--text-color);
+      }
+    }
+    
