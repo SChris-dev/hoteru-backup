@@ -80,7 +80,9 @@ const Register = () => {
                 <form onSubmit={handleSubmit}>
                     <div className="header-card">
                         <h1>Register</h1>
+                        {message && 
                         <p className='error-message'>{message}</p>
+                        }
                     </div>
                     <div className="input-card">
                         <div className="form-group">

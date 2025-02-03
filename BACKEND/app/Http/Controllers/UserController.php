@@ -118,7 +118,7 @@ class UserController extends Controller
         $validate = Validator::make($req->all(), [
             'name' => 'sometimes|string',
             'email' => 'sometimes|email|unique:users,email,' . $user->id,
-            'password' => 'sometimes|min:3|string',
+            // 'password' => 'min:3|string',
             'phone_number' => 'sometimes|regex:/\d{4}\-\d{4}\-\d{4}/',
             'address' => 'sometimes|nullable'
         ]);
@@ -133,7 +133,7 @@ class UserController extends Controller
         $resultUser = $user->update([
             'name' => $req->name,
             'email' => $req->email,
-            'password' => bcrypt($req->password),
+            // 'password' => bcrypt($req->password),
             'phone_number' => $req->phone_number,
             'address' => $req->address
         ]);
@@ -144,7 +144,7 @@ class UserController extends Controller
             'updated_data' => [
                 'name' => $user->name,
                 'email' => $user->email,
-                'password' => $user->password,
+                // 'password' => $user->password,
                 'phone_number' => $user->phone_number,
                 'address' => $user->address
             ]

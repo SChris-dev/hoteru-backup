@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import Logo from '../assets/img/hoteru_logo.png';
 
 function Navbar() {
     const token = localStorage.getItem('hoteru_login_token');
     const location = useLocation();
+    const navigate = useNavigate();
 
     const [isOpen, setIsOpen] = useState(false);
     const toggleMenu = () => setIsOpen(!isOpen);
@@ -35,6 +36,7 @@ function Navbar() {
         localStorage.removeItem('hoteru_user_email');
         localStorage.removeItem('hoteru_admin_key');
         setIsLoggedIn(false);
+        navigate('/')
     }
 
     return (
@@ -76,7 +78,7 @@ function Navbar() {
                         <li><NavLink to="/dashboard">Dashboard</NavLink></li>
                         <li><NavLink to="/rooms">Rooms</NavLink></li>
                         <li><NavLink to="/reservations">Reservations</NavLink></li>
-                        <li><NavLink to="/transactions">Transactions History</NavLink></li>
+                        <li><NavLink to="/transactions">Transactions</NavLink></li>
                     </>
                 )}
             </ul>

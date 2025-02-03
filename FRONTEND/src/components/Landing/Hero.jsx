@@ -10,7 +10,7 @@ const Hero = () => {
                 <p>Discover the perfect blend of luxury and warmth at our hotel, 
                     where every stay is designed to rejuvenate and inspire. 
                     Let us make your next getaway unforgettable.</p>
-                <a href="#about" alt="about-us-button" className="cta-button">About Us</a>
+                <a href="#about" alt="about-us-button" className="cta-button">Learn More!</a>
             </div>
         </section>
     );

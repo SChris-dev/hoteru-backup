@@ -56,7 +56,7 @@ const Dashboard = () => {
                                     <p><b>Email:</b> {usersData.email}</p>
                                     <p><b>Phone:</b> {usersData.phone_number}</p>
                                     <p><b>Address:</b> {usersData.address}</p>
-                                    <button className="btn">Update Profile (Soon)</button>
+                                    <a href="/dashboard/updateprofile"><button className="btn-dash">Update Profile</button></a>
                                 </div>
                             </div>
                         </div>

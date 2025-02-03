@@ -47,75 +47,74 @@ const RoomsPage = () => {
                 <p className="loading-message">Loading rooms...</p>
             ) : errorMessage ? (
                 <p className="error-message">{errorMessage}</p>
-            ) : roomsData.length === 0 ? (
-                <p className="no-rooms">No rooms available.</p>
+            ) : roomsData.filter(room => room.is_available).length === 0 ? (
+                <p className="no-rooms">No available rooms.</p>
             ) : (
-                <>
                 <div className="rooms-grid">
-                    {roomsData.map((room, index) => {
-                    // Parse image_urls string into an array
-                    const roomImages = JSON.parse(room.image_urls || "[]");
+                    {roomsData
+                        .filter(room => room.is_available) // Only show available rooms
+                        .map((room, index) => {
+                            // Parse image_urls string into an array
+                            const roomImages = JSON.parse(room.image_urls || "[]");
 
-                    return (
-                    <div key={room.id} className="room-card">
-                        {/* Display room images */}
-                        {roomImages.length > 0 ? (
-                                roomImages.map((image, index) => (
-                                    <img
-                                    key={index}
-                                    src={image}
-                                    alt={`Room ${index + 1}`}
-                                    style={{
-                                        width: "100%",
-                                        height: "300px",
-                                    }}
-                                    />
-                                ))
-                                ) : (
-                                <p>No images available</p>
-                                )}
+                            return (
+                                <div key={room.id} className="room-card">
+                                    {/* Display room images */}
+                                    {roomImages.length > 0 ? (
+                                        roomImages.map((image, imgIndex) => (
+                                            <img
+                                                key={imgIndex}
+                                                src={image}
+                                                alt={`Room ${imgIndex + 1}`}
+                                                style={{
+                                                    width: "100%",
+                                                    height: "300px",
+                                                }}
+                                            />
+                                        ))
+                                    ) : (
+                                        <p>No images available</p>
+                                    )}
 
-                                <div className="room-info">
-                                <h3>Room {room.room_code}</h3>
-                                <p>Type: {roomTypes[room.room_category_id] || "Unknown"}</p>
-                                <p>Price: Rp.{room.price_per_night}/night</p>
-                                <button
-                                    onClick={() => toggleDetails(index)}
-                                    className="toggle-details"
-                                >
-                                    {openIndex === index
-                                    ? "Hide Details ▲"
-                                    : "Show Details ▼"}
-                                </button>
+                                    <div className="room-info">
+                                        <h3>Room {room.room_code}</h3>
+                                        <p>Type: {roomTypes[room.room_category_id] || "Unknown"}</p>
+                                        <p>Price: Rp.{room.price_per_night}/night</p>
+                                        <button
+                                            onClick={() => toggleDetails(index)}
+                                            className="toggle-details"
+                                        >
+                                            {openIndex === index ? "Hide Details ▲" : "Show Details ▼"}
+                                        </button>
 
-                                {/* Collapsible room details */}
-                                <div
-                                    className="room-details-wrapper"
-                                    style={{
-                                    height:
-                                        openIndex === index
-                                        ? `${contentRef.current[index]?.scrollHeight}px`
-                                        : "0px",
-                                    }}
-                                >
-                                    <div
-                                    className="room-details"
-                                    ref={(el) => (contentRef.current[index] = el)}
-                                    >
-                                    <p>
-                                        <b>Status:</b> {room.is_available ? "Available" : "Occupied"}
-                                    </p>
-                                    <p>{room.room_category.description}</p>
-                                    <NavLink className="btn-dash" to={`/reservations/${room.id}`}>Book This Room!</NavLink>
+                                        {/* Collapsible room details */}
+                                        <div
+                                            className="room-details-wrapper"
+                                            style={{
+                                                height:
+                                                    openIndex === index
+                                                        ? `${contentRef.current[index]?.scrollHeight}px`
+                                                        : "0px",
+                                            }}
+                                        >
+                                            <div
+                                                className="room-details"
+                                                ref={(el) => (contentRef.current[index] = el)}
+                                            >
+                                                <p><b>Status:</b> Available</p>
+                                                <p>{room.room_category.description}</p>
+                                                <NavLink className="btn-dash" to={`/reservations/${room.id}`}>
+                                                    Book This Room!
+                                                </NavLink>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                </div>
-                            </div>
                             );
                         })}
                 </div>
-                </>
             )}
+
         </section>
     );
 };

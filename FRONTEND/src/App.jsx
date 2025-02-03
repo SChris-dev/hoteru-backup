@@ -18,6 +18,8 @@ import Reservations from './pages/Reservations';
 import ReservationsHistory from './pages/ReservationsHistory';
 import Transactions from './pages/Transactions';
 import TransactionsHistory from './pages/TransactionsHistory';
+import TransactionsDetail from './pages/TransactionsDetail';
+import UpdateProfile from './pages/UpdateProfile';
 
 // admin imports
 import Admin from './Admin';
@@ -37,11 +39,13 @@ function App() {
             <Route path='/login' element={<Login/>}></Route>
             <Route path='/register' element={<Register/>}></Route>
             <Route path='/dashboard' element={<Dashboard/>}></Route>
+            <Route path='/dashboard/updateprofile' element={<UpdateProfile/>}></Route>
             <Route path='/rooms' element={<RoomsPage/>}></Route>
             <Route path='/reservations' element={<ReservationsHistory/>}></Route>
             <Route path='/transactions' element={<TransactionsHistory/>}></Route>
             <Route path='/reservations/:id' element={<Reservations/>}></Route>
             <Route path='/transactions/:id' element={<Transactions/>}></Route>
+            <Route path='/transactions/details/:transactionId' element={<TransactionsDetail/>}></Route>
             <Route path='/*' element={<NotFoundPage/>}></Route>
           </Route>
           <Route path='/admin' element={<Admin/>}>

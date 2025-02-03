@@ -78,7 +78,9 @@ const Login = () => {
                 <form onSubmit={handleSubmit}>
                     <div className="header-card">
                         <h1>Login</h1>
+                        {message && 
                         <p className='error-message'>{message}</p>
+                        }
                     </div>
                     <div className="input-card">
                     <div className="form-group">

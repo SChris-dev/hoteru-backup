@@ -217,7 +217,7 @@ class ReservationController extends Controller
         $user = Auth::user();
     
         // Fetch reservations with related room and user details
-        $reservations = Reservation::with('room') // Assuming `Reservation` has a relationship with `Room`
+        $reservations = Reservation::with('room')
             ->where('user_id', $user->id)
             ->get();
     
@@ -237,6 +237,8 @@ class ReservationController extends Controller
                 'room_code' => $reservation->room->room_code ?? null,
                 'user_id' => $user->id,
                 'reserved_by' => $user->name,
+                'check_in' => $reservation->check_in,
+                'check_out' => $reservation->check_out,
                 'status' => $reservation->status,
                 'notes' => $reservation->notes
             ];
